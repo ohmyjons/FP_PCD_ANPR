@@ -14,23 +14,23 @@ import imutils
 # PRAPENGOLAHAN
 
 # load citra RGB (BGR)
-# img = cv.imread("./test_images/1.jpg") # plat nomer not detect
-# img = cv.imread("./test_images/2.jpg") # salah segmentasi platnomer
-# img = cv.imread("./test_images/09.jpg") #salah segmentasi karakter
+# img = cv.imread("./test_images/1.jpg") 
+# img = cv.imread("./test_images/2.jpg") 
+# img = cv.imread("./test_images/09.jpg")
 # img = cv.imread("./test_images/9.jpg") 
 # img = cv.imread("./test_images/10.jpg") 
-# img = cv.imread("./test_images/123.jpg")  #salah segmentasi platnomer
-# img = cv.imread("./test_images/124.jpg") #segmentasi plat salah
+# img = cv.imread("./test_images/123.jpg") 
+# img = cv.imread("./test_images/124.jpg") 
 # img = cv.imread("./test_images/AA5627JT.jpg")
 # img = cv.imread("./test_images/AB2638XU.jpg") 
 # img = cv.imread("./test_images/AB5592EG.jpg")
-img = cv.imread("./test_images/AD2914JG.jpg")  # segmentasi salah D dobel
+img = cv.imread("./test_images/AD2914JG.jpg") 
 # img = cv.imread("./test_images/B3023KEZ.jpg")
 # img = cv.imread("./test_images/plat1.jpeg") 
 # img = cv.imread("./test_images/plat2.jpeg") 
 # img = cv.imread("./test_images/plat3.jpeg") 
-# img = cv.imread("./test_images/platw.jpeg")  #Salah Segmentasi 1 dan 0
-# img = cv.imread("./test_images/platad.jpeg")  # Salah Segementasi di D
+# img = cv.imread("./test_images/platw.jpeg")  
+# img = cv.imread("./test_images/platad.jpeg")  
 # img = cv.imread("./test_images/platl.jpeg") 
 # img = cv.imread("./test_images/plat3.jpeg") 
 # img = cv.imread("./test_images/plat_new_1.jpeg") 
@@ -68,7 +68,6 @@ def normalisasiCahaya(img_gray):
 
     # ==== Cek normalisasi START ====
     # Untuk ngecek hasil sebelum dan sesudah dilakukan normalisasi
-    # Bisa di comment/uncomment
 
     # buat citra bw tanpa normalisasi
     (thresh, img_without_norm_bw) = cv.threshold(img_gray, 0, 255, cv.THRESH_BINARY + cv.THRESH_OTSU)
@@ -146,7 +145,7 @@ img_norm_bw = normalisasiCahaya(img_gray)
 def deteksiPlatnomer(img_norm_bw,img_gray):
     global img_plate_gray
     global cek_lowlight
-    global img_show_plate,x_plate,y_plate,h_plate
+    # global img_show_plate,x_plate,y_plate,h_plate
     # dapatkan contours dari citra kendaraan
     contours_vehicle, hierarchy = cv.findContours(img_norm_bw, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE) # get the contour for every area
 
